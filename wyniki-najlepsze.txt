@@ -1,0 +1,40 @@
+[LibLinear]iter   1  #CD cycles 1
+iter   2  #CD cycles 1
+iter   3  #CD cycles 1
+iter   4  #CD cycles 1
+iter   5  #CD cycles 6
+iter   6  #CD cycles 1
+iter   7  #CD cycles 13
+iter   8  #CD cycles 3
+iter   9  #CD cycles 1
+iter  10  #CD cycles 15
+iter  11  #CD cycles 1
+iter  12  #CD cycles 22
+iter  13  #CD cycles 3
+iter  14  #CD cycles 1
+iter  15  #CD cycles 19
+=========================
+optimization finished, #iter = 15
+Objective value = 173.323829
+#nonzeros/#features = 259/27656
+
+
+
+{'dataset': 'reviews.text',
+ 'ngram_range': (9, 10),
+ 'penalty': 'l1',
+ 'solver': 'liblinear'}
+258 N-gramów o niezerowych wagach
+Dodatnie: #nauczyć#, #przyjemn, #rzeczy#, #polecam#, #wink#, #przy#, #)#, #zrozumia, #pozytywn, #chcesz#, #trochę#, #jak#, #poczucie, #spoko#, #+#, #było#, #być#, #też#, profesor#
+Ujemne: #unikać#, #unikac#, odradzam#, #michalik, #osób#, #odradzam#, powiedzi#, #evil#, #których#, #innych#, #?#, #tych#, #mały#, #(#, #powiedzi, #dopiero#, #mało#, #sposób#, #kołach#, #j#
+              precision    recall  f1-score   support
+
+           0      0.690     0.625     0.656        32
+           1      0.920     0.939     0.929       147
+
+    accuracy                          0.883       179
+   macro avg      0.805     0.782     0.793       179
+weighted avg      0.879     0.883     0.880       179
+
+
+Process finished with exit code 0

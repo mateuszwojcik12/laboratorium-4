@@ -10,9 +10,9 @@ from sklearn.feature_extraction import text
 
 PARAMS = {
     # TU(6): Wybrać zbiór danych.
-    'dataset': '###',
+    'dataset': 'reviews.text',
     # TU(9): Próbować różnych wartości.
-    'ngram_range': (5, 5),
+    'ngram_range': (9, 10),
     # TU(9): Próbować różnych wartości.
     'penalty': 'l1',
     'solver': 'liblinear',
@@ -55,6 +55,7 @@ RED = [0xdc, 0x32, 0x2f]
 NEGATION_START = {
     # TU(11): Wpisać wyrazy, które zmieniają
     # wydźwięk swoich następników na przeciwny.
+    'nie', 'bez', 'oprócz', 'prócz', 'poza', 'brak', 'źle'
 }
 
 
@@ -63,7 +64,7 @@ def starts_with_negation(token):
 
 
 def read_file(filename):
-    with open(filename, 'rt') as file:
+    with open(filename, 'rt', encoding='UTF-8') as file:
         for line in file:
             tokens = line.lower().split()
             y = LABEL_TO_Y[tokens[-1]]
