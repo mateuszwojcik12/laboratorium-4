@@ -53,8 +53,6 @@ RED = [0xdc, 0x32, 0x2f]
 
 
 NEGATION_START = {
-    # TU(11): Wpisać wyrazy, które zmieniają
-    # wydźwięk swoich następników na przeciwny.
     'nie', 'bez', 'oprócz', 'prócz', 'poza', 'brak', 'źle'
 }
 
@@ -73,11 +71,28 @@ def read_file(filename):
 
 
 def preprocess_tokens(tokens):
-    return tokens
     # TU(11): Usunąć powyższy wiersz i zaimplementować
     # wstępne przetwarzanie tokenów zgodnie z instrukcją.
     negate = False
     result = []
+
+    for token in tokens:
+        neg_start = starts_with_negation(token)
+
+        if not negate and not neg_start:
+            result.append(token)
+        elif not negate and neg_start:
+            result.append(token.upper())
+        elif negate and not neg_start:
+            result.append(token.upper())
+        else:
+            result.append(token)
+
+        if token in NEGATION_START:
+            negate = True
+        elif not token.isalnum() :
+            negate = False
+
     return result
 
 
